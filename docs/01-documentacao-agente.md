@@ -91,8 +91,4 @@ flowchart TD
 ### Limitações Declaradas
 > O que o agente NÃO faz?
 
-Recomendações de investimentos personalizados
-Análises financeiras complexas ou consultoria especializada
-Integração com contas bancárias reais
-Previsões baseadas em dados externos não fornecidos
-Respostas fora do escopo de controle de gastos e simulação financeira
+Recomendações de investimentos personalizados, análises financeiras complexas ou consultoria especializada, integração com contas bancárias reais, previsões baseadas em dados externos não fornecidos, respostas fora do escopo de controle de gastos e simulação financeira.
