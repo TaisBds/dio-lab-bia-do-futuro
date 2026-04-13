@@ -26,25 +26,36 @@ A avaliação pode ser feita de duas formas complementares:
 
 Crie testes simples para validar seu agente:
 
-### Teste 1: Consulta de gastos
-- **Pergunta:** "Quanto gastei com alimentação?"
-- **Resposta esperada:** Valor baseado no `transacoes.csv`
-- **Resultado:** [ ] Correto  [ ] Incorreto
+Teste 1: Consulta de gastos
+Pergunta: "Quanto gastei com alimentação?"
+Resposta esperada: Soma apenas dos gastos da categoria alimentação
+Resultado: [ ] Correto [X] Incorreto
 
-### Teste 2: Recomendação de produto
-- **Pergunta:** "Qual investimento você recomenda para mim?"
-- **Resposta esperada:** Produto compatível com o perfil do cliente
-- **Resultado:** [ ] Correto  [ ] Incorreto
+Observação:
+O agente retornou o valor total de gastos gerais, sem filtrar corretamente pela categoria solicitada.
 
-### Teste 3: Pergunta fora do escopo
-- **Pergunta:** "Qual a previsão do tempo?"
-- **Resposta esperada:** Agente informa que só trata de finanças
-- **Resultado:** [ ] Correto  [ ] Incorreto
+Pergunta: "Qual investimento você recomenda para mim?"
+Resposta esperada: O agente deve informar que não realiza recomendações de investimento
+Resultado: [ ] Correto [X] Incorreto
 
-### Teste 4: Informação inexistente
-- **Pergunta:** "Quanto rende o produto XYZ?"
-- **Resposta esperada:** Agente admite não ter essa informação
-- **Resultado:** [ ] Correto  [ ] Incorreto
+Observação:
+O agente tentou responder de forma genérica, não respeitando a limitação definida no escopo.
+
+Teste 3: Pergunta fora do escopo
+Pergunta: "Qual a previsão do tempo?"
+Resposta esperada: Informar que não possui essa informação e redirecionar para finanças
+Resultado: [X] Correto [ ] Incorreto
+
+Observação:
+O agente respondeu corretamente, mantendo o foco no domínio financeiro.
+
+Teste 4: Informação inexistente
+Pergunta: "Quanto rende o produto XYZ?"
+Resposta esperada: Informar que não possui dados sobre esse produto
+Resultado: [X] Correto [ ] Incorreto
+
+Observação:
+O agente reconheceu a limitação e não inventou informações.
 
 ---
 
@@ -53,19 +64,32 @@ Crie testes simples para validar seu agente:
 Após os testes, registre suas conclusões:
 
 **O que funcionou bem:**
-- [Liste aqui]
+
+O agente mantém segurança ao não inventar informações
+Responde corretamente perguntas fora do escopo
+Simulações financeiras simples funcionam corretamente
+Registro básico de gastos está funcional
+Interface do chatbot é simples e intuitiva
 
 **O que pode melhorar:**
-- [Liste aqui]
+
+Melhorar o filtro por categorias (ex: alimentação, transporte, etc.)
+Refinar a interpretação de linguagem natural
+Garantir que o agente respeite totalmente as limitações (ex: não sugerir investimentos)
+Implementar validações mais robustas nos dados
+Melhorar a precisão nos resumos financeiros
 
 ---
 
 ## Métricas Avançadas (Opcional)
 
-Para quem quer explorar mais, algumas métricas técnicas de observabilidade também podem fazer parte da sua solução, como:
+| Métrica       | Nota (1-5) | Justificativa                                                                 |
+| ------------- | ---------- | ----------------------------------------------------------------------------- |
+| Assertividade | 3          | Responde corretamente em casos simples, mas falha em filtros mais específicos |
+| Segurança     | 4          | Evita inventar informações na maioria dos casos                               |
+| Coerência     | 4          | Mantém consistência com o objetivo do agente                                  |
 
-- Latência e tempo de resposta;
-- Consumo de tokens e custos;
-- Logs e taxa de erros.
 
-Ferramentas especializadas em LLMs, como [LangWatch](https://langwatch.ai/) e [LangFuse](https://langfuse.com/), são exemplos que podem ajudar nesse monitoramento. Entretanto, fique à vontade para usar qualquer outra que você já conheça!
+Observação Final
+
+Os testes demonstram que o agente já é funcional para controle básico de finanças, mas ainda precisa de melhorias na interpretação de comandos e precisão nas consultas. Com ajustes na lógica e no processamento da linguagem natural, o HelpBot pode se tornar uma ferramenta mais robusta e confiável.
