@@ -56,4 +56,4 @@ O impacto da solução está em ajudar os usuários a desenvolverem uma maior co
 
 > Cole aqui o link do seu pitch (YouTube, Loom, Google Drive, etc.)
 
-[Link do vídeo]
+(https://drive.google.com/file/d/1XMMlDexu-4k7ePl40EbrySoElzv4bjpw/view?usp=sharing)
